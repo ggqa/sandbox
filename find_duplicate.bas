@@ -2,19 +2,22 @@ Attribute VB_Name = "find_duplicate"
 Option Explicit
 Function bubbleSort(arr As Variant) As String
     Dim temp As Variant
+    Dim tempArr As Variant
     Dim i As Integer, j As Integer
+    
+    tempArr = arr
     
     For i = 1 To 3
         For j = 1 To (3 - i)
-            If arr(1, j) > arr(1, j + 1) Then
-                temp = arr(1, j)
-                arr(1, j) = arr(1, j + 1)
-                arr(1, j + 1) = temp
+            If tempArr(1, j) > tempArr(1, j + 1) Then
+                temp = tempArr(1, j)
+                tempArr(1, j) = tempArr(1, j + 1)
+                tempArr(1, j + 1) = temp
             End If
         Next j
     Next i
     
-    bubbleSort = arr(1, 1) & arr(1, 2) & arr(1, 3)
+    bubbleSort = tempArr(1, 1) & tempArr(1, 2) & tempArr(1, 3)
     
 End Function
 
